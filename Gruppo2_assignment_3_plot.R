@@ -21,6 +21,6 @@ plot(x=c(1:N_max), y=Put_Bin, type="l", col="red", lwd=3,
      xlab="Numero di periodi (fissata la durata residua)", ylab="Valutazione di una put (europea)",
      main="Convergenza del metodo Binomial Tree")
 lines (BS_eval, type = "l", lty="dashed", lwd =3,col="blue")
-legend(15,7.8,c("Binomial Tree", "Black and Scholes"), col=c("red","blue"),
+legend(15,10.2,c("Binomial Tree", "Black and Scholes"), col=c("red","blue"),
        lty=c(1,3), title.font=2)
 

@@ -17,7 +17,6 @@ long_call_payoff(S=sottostante, K=strike)
 #----------------------------------------
 range_min <-70
 range_max <- 130
-#step <- 0.1
 range <- seq(range_min, range_max, by=1) 
 sottostante <- range #vettore di valori del prezzo dell'asset sottostante
 strike_1 <- 90 #strike price della prima call option 

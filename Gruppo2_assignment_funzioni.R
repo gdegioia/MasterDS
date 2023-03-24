@@ -2,6 +2,9 @@
 # Assignment in Economic and Financial Data Science: modulo 1
 # Gruppo 2 - Studenti: Luca Garbin, Laura Proto, Andrea Mentasti, Giacomo de Gioia
 
+#-------------#
+# Problema 1  #
+#-------------#
 
 long_call_payoff = function(S, K) {
   return(max(S - K, 0))
@@ -13,7 +16,9 @@ butterfly_payoff = function(S, K1, K2, J, H) {
   return (J*long_call_payoff(S, K1) - (J+H)*long_call_payoff(S, KK)+ H*long_call_payoff(S, K2))
 }
 
-#----------------------
+#-------------#
+# Problema 2  #
+#-------------#
 
 BM_Put <- function(S0, u, d, K, TGrande=1, t0=0, r=0){
   
@@ -26,7 +31,6 @@ BM_Put <- function(S0, u, d, K, TGrande=1, t0=0, r=0){
   y <- quantita_asset[2,1]
   qu <- ((1+r)^Time2Mat-d)/(u-d)
   
-  #Putprice <- (1/(1+r)^Time2Mat)*(qu*max(c(K-S0*u,0))+(1-qu)*max(c(K-S0*d,0)))
   Putprice <- (1/(1+r)^Time2Mat)*(qu*max(K-S0*u,0)+(1-qu)*max(K-S0*d,0))
   
   return(list(prezzo_put=Putprice, quantita_risky=y, prob_risk_neutral=c(qu=qu, qd=1-qu)))
@@ -35,7 +39,9 @@ BM_Put <- function(S0, u, d, K, TGrande=1, t0=0, r=0){
 
 Callprice <- function(Put, S0, K, fatt_cap) Put + S0 - K / fatt_cap
 
-#---------------------
+#-------------#
+# Problema 3  #
+#-------------#
 
 library("fOptions")
 library("quantmod")

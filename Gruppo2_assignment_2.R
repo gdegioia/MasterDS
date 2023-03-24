@@ -4,26 +4,20 @@
 
 source("Gruppo2_assignment_funzioni.R")
 
-
-#***********************************************************************************************#
-#-------------#
-# Problema 2  #
-#-------------#
-
-sottostante <- 120
-strike <- 100
+sottostante <- 100
+strike <- 110
 epoca_iniziale <- 0
 scadenza <- 1
-tasso_cap_comp <- 0
+tasso_cap_comp <- 0.05
 fatt_cap = (1+tasso_cap_comp)^(scadenza-epoca_iniziale)
-rialzista <- 1.01*fatt_cap
-ribassista <- 0.99*fatt_cap
+rialzista <- 1.10*fatt_cap
+ribassista <- 0.8*fatt_cap
 
 res <- BM_Put(S0=sottostante, u=rialzista, d=ribassista, K=strike, TGrande=scadenza, 
               t0=epoca_iniziale, r=tasso_cap_comp)
                    
 res$prezzo_put  # esempio numerico
-res$quantita_risky # esempio numerico --- commento quantita negativa
+res$quantita_risky # esempio numerico 
 res$prob_risk_neutral # esempio numerico
 
 #--------------
